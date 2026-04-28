@@ -39,8 +39,8 @@ import { InteractiveMap } from './components/InteractiveMap';
 
 // Images extracted from user provided HTML
 const IMAGES = {
-  LOGO_WHITE: "/input_file_0.png",
-  LOGO_GREEN: "/input_file_1.png",
+  LOGO_WHITE: "/AGP4_logo.png",
+  LOGO_GREEN: "/AGP4_logo.png",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
@@ -51,41 +51,13 @@ const IMAGES = {
 
 // Logo component using custom SVG implementation to match user branding
 const Logo = ({ light = false, className = "" }: { light?: boolean, className?: string }) => {
-  const color = light ? "white" : "#006400"; // Primary dark green from the logo image
-  
   return (
-    <div className={`flex flex-col items-center gap-1 ${className} select-none group`}>
-      <svg 
-        viewBox="0 0 100 80" 
-        className="h-10 w-auto" 
-        fill="none" 
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        {/* Circle/Background */}
-        <path d="M50 5C26.5 5 7.5 24 7.5 47.5C7.5 54.5 9 61 12 66.5C18 63 32.5 60.5 50 60.5C67.5 60.5 82 63 88 66.5C91 61 92.5 54.5 92.5 47.5C92.5 24 73.5 5 50 5Z" fill={color}/>
-        
-        {/* Plant Stalk (Cutout) */}
-        <g stroke={light ? "#006400" : "white"}>
-          <path d="M50 55V15" strokeWidth="2.5" strokeLinecap="round"/>
-          {/* Leaves */}
-          <path d="M50 50C50 50 40 45 40 38C40 31 50 35 50 35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M50 50C50 50 60 45 60 38C60 31 50 35 50 35" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          
-          <path d="M50 40C50 40 42 36 42 30C42 24 50 28 50 28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M50 40C50 40 58 36 58 30C58 24 50 28 50 28" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          
-          <path d="M50 30C50 30 43 27 43 22C43 17 50 20 50 20" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M50 30C50 30 57 27 57 22C57 17 50 20 50 20" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-          
-          <path d="M50 18C50 18 47 13 50 7C53 13 50 18 50 18" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-        </g>
-        
-        {/* Horizon Line */}
-        <path d="M10 70C10 70 30 65 50 65C70 65 90 70 90 70" stroke={color} strokeWidth="3" strokeLinecap="round"/>
-      </svg>
-      <span className={`font-headline text-lg font-black tracking-widest leading-none mt-[-5px] transition-colors duration-500 ${light ? 'text-white' : 'text-[#006400]'}`}>
-        AGP4
-      </span>
+    <div className={`flex items-center ${className}`}>
+      <img 
+        src="/AGP4_logo.png" 
+        alt="AGP4 Logo" 
+        className="h-12 w-auto object-contain" 
+      />
     </div>
   );
 };
