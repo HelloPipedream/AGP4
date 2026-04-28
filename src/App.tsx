@@ -54,7 +54,7 @@ const Logo = ({ light = false, className = "" }: { light?: boolean, className?: 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/AGP4_logo.png" 
+        src="./AGP4_logo.png" 
         alt="AGP4 Logo" 
         className="h-12 w-auto object-contain" 
       />
