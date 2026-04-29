@@ -39,8 +39,8 @@ import { InteractiveMap } from './components/InteractiveMap';
 
 // Images extracted from user provided HTML
 const IMAGES = {
-  LOGO_WHITE: "/Logo.png",
-  LOGO_GREEN: "/Logo.png",
+  LOGO_WHITE: "https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/Logo.png?token=GHSAT0AAAAAAD3XBL3KNT6ABQ7STTEDEKGO2PSJEBA",
+  LOGO_GREEN: "https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/Logo.png?token=GHSAT0AAAAAAD3XBL3KNT6ABQ7STTEDEKGO2PSJEBA",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
@@ -54,7 +54,7 @@ const Logo = ({ light = false, className = "" }: { light?: boolean, className?: 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/Logo.png" 
+        src="https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/Logo.png?token=GHSAT0AAAAAAD3XBL3KNT6ABQ7STTEDEKGO2PSJEBA" 
         alt="AGP4 Logo" 
         className="h-12 w-auto object-contain" 
       />
