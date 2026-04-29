@@ -37,19 +37,19 @@ import {
 import { GoogleGenAI } from "@google/genai";
 import { InteractiveMap } from './components/InteractiveMap';
 
-// Images extracted from user provided HTML
+// Images mapping - Updated to your new filenames
 const IMAGES = {
-  LOGO_WHITE: "Logo.png",
-  LOGO_GREEN: "Logo.png",
+  LOGO_WHITE: "/Logo.png",
+  LOGO_GREEN: "/Logo.png",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
-  COMMERCIAL_JUG: "/CF.png", // Updated
-  HOME_BOTTLE: "/HG.png",    // Updated
+  COMMERCIAL_JUG: "/CF.png",
+  HOME_BOTTLE: "/HG.png",
   ORGANIC: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjAkUQVkQLrcxBoyQBTsrjzjdiOHg8oPu-vuqMExv1PumD9QdWG_odDblKb6Rq3cLnzsF6hKQ-9qFm7-gvf3RvcwxtLeUCfvzcbx32jf9bstyczIoZ8SF97P44Erdr9JRP7xI_fklj7Qft94w_4AgX0Jn5dgBAUGu2hfq-tkTrEEjrEz-4w3T-gJ6qmQIKCV7RVLjxU6yJG7JcyBK4BHqLXOENJW3_KHqTu7H6DZMC_CFbrYGMt-EI4yzFFbU0ftxrHfxdTk5-G1w"
 };
 
-// Logo component using custom SVG implementation to match user branding
+// Logo component
 const Logo = ({ light = false, className = "" }: { light?: boolean, className?: string }) => {
   return (
     <div className={`flex items-center ${className}`}>
@@ -164,7 +164,6 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Mega Menu Dropdown */}
       <AnimatePresence>
         {activeMegaMenu && (
           <motion.div
@@ -176,7 +175,6 @@ const Header = () => {
           >
             <div className="max-w-7xl mx-auto px-8 md:px-12 py-12">
               <div className="grid grid-cols-12 gap-12">
-                {/* Highlighted Section for 'Technology' */}
                 {activeMegaMenu === 'technology' && megaMenuContent.technology.featured && (
                   <div className="col-span-12 lg:col-span-5 relative group cursor-pointer overflow-hidden rounded-sm">
                     <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors z-10"></div>
@@ -197,7 +195,6 @@ const Header = () => {
                   </div>
                 )}
 
-                {/* Grid Links */}
                 <div className={`grid gap-8 ${activeMegaMenu === 'technology' ? 'col-span-12 lg:col-span-7 grid-cols-1 md:grid-cols-2' : 'col-span-12 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'}`}>
                   {megaMenuContent[activeMegaMenu].links.map((link: any, idx: number) => (
                     <motion.div 
@@ -217,7 +214,6 @@ const Header = () => {
                     </motion.div>
                   ))}
                   
-                  {/* Decorative element for others */}
                   {activeMegaMenu !== 'technology' && (
                     <div className="hidden lg:flex items-center justify-center border-l border-outline-variant/10 pl-8">
                        <div className="text-center">
@@ -421,7 +417,6 @@ export default function App() {
       <AIFarmerAssistant />
 
       <main>
-        {/* Enhanced Hero Section */}
         <section className="relative h-screen min-h-[900px] w-full flex items-start pt-32 pb-48 overflow-hidden bg-[#020402]">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -448,7 +443,6 @@ export default function App() {
               className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center"
             >
               <div className="lg:col-span-10">
-                {/* Micro Tagline */}
                 <div className="flex items-center gap-3 mb-1">
                   <div className="h-px w-6 bg-primary"></div>
                   <span className="text-[9px] font-black uppercase tracking-[0.7em] text-primary font-body">
@@ -456,14 +450,12 @@ export default function App() {
                   </span>
                 </div>
 
-                {/* Massive Architectural Headline */}
                 <h1 className="text-white font-headline text-6xl md:text-8xl xl:text-[140px] leading-[0.88] tracking-tighter mb-12 drop-shadow-2xl">
                   Grow More.<br/>
                   <span className="text-primary italic">Use Less.</span><br/>
                   Waste Nothing.
                 </h1>
 
-                {/* Sub-content with strong vertical anchor */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start border-t border-white/5 pt-12">
                   <div className="max-w-md">
                     <p className="text-lg md:text-xl text-white/60 font-light leading-relaxed font-body mb-10">
@@ -479,7 +471,6 @@ export default function App() {
                     </div>
                   </div>
                   
-                  {/* Decorative Stat/Label */}
                   <div className="hidden md:block pt-2">
                     <div className="space-y-6">
                       <div className="flex items-center gap-4 group">
@@ -496,7 +487,6 @@ export default function App() {
             </motion.div>
           </div>
 
-          {/* Scroll Indicator - Positioned relative to avoid overlap */}
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -510,7 +500,6 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Methodology Section */}
         <section id="process" className="bg-white py-32 px-8 md:px-12 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
             <img src={IMAGES.CHERRIES} alt="" className="absolute top-[10%] left-[5%] w-64 h-64 opacity-[0.04] blur-xl transform -rotate-12" referrerPolicy="no-referrer" />
@@ -570,9 +559,7 @@ export default function App() {
                   </motion.div>
                 ))}
 
-                {/* Trust Badges */}
                 <div className="mt-16 flex flex-wrap gap-x-16 gap-y-10 items-center px-8 lg:px-0 border-t border-outline-variant/10 pt-12">
-                  {/* Bee Friendly */}
                   <div className="flex items-center gap-5 group cursor-default">
                     <div className="relative">
                       <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl group-hover:bg-primary/50 transition-all duration-700 scale-150 opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
@@ -586,7 +573,6 @@ export default function App() {
                           <text fill="#2B6334" fontSize="5" fontWeight="900" className="uppercase tracking-[0.2em] font-sans">
                             <textPath href="#beeCurve" startOffset="50%" textAnchor="middle">Certified • Certified • Certified</textPath>
                           </text>
-                          {/* Bee Icon Design - Centered and scaled to not overlap text area */}
                           <g transform="translate(18, 20) scale(0.45)">
                             <path d="M32 15C25 15 20 20 20 25C20 28 22 32 25 35C22 38 20 42 20 45C20 50 25 55 32 55C39 55 44 50 44 45C44 42 42 38 39 35C42 32 44 28 44 25C44 20 39 15 32 15Z" fill="#F1B521"/>
                             <path d="M25 25C25 21 28 18 32 18C36 18 39 21 39 25C39 29 36 32 32 32C28 32 25 29 25 25Z" fill="#2B6334"/>
@@ -603,7 +589,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* OMRI / Organic */}
                   <div className="flex items-center gap-5 group cursor-default">
                     <div className="relative">
                       <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl group-hover:bg-primary/50 transition-all duration-700 scale-150 opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
@@ -631,7 +616,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Made in USA */}
                   <div className="flex items-center gap-5 group cursor-default">
                     <div className="relative">
                       <div className="absolute inset-0 bg-primary/30 rounded-full blur-2xl group-hover:bg-primary/50 transition-all duration-700 scale-150 opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
@@ -645,7 +629,6 @@ export default function App() {
                           <text fill="#2B6334" fontSize="4" fontWeight="900" className="uppercase tracking-[0.2em] font-sans">
                             <textPath href="#usaCurve" startOffset="50%" textAnchor="middle">Premium Quality • Established 2024</textPath>
                           </text>
-                          {/* Modern USA Shield Icon */}
                           <g transform="translate(18, 22) scale(0.9)">
                             <path d="M15 0L30 5V15C30 22 25 28 15 32C5 28 0 22 0 15V5L15 0Z" fill="#3C3B6E"/>
                             <rect x="0" y="8" width="30" height="4" fill="#B22234"/>
@@ -670,7 +653,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Visual Demonstration */}
         <section className="bg-surface-container/50 py-32 px-8 md:px-12 relative">
           <div className="absolute inset-0 leaf-texture opacity-[0.03] pointer-events-none"></div>
           <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -713,7 +695,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Proven Resilience / Field Intelligence */}
         <section id="impact" className="py-32 px-8 md:px-12 bg-white relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-24 items-start">
             <div>
@@ -747,23 +728,105 @@ export default function App() {
                 ))}
               </div>
 
-              {/* Commercial Farming Section */}
-<motion.img 
-  // ... animation properties
-  src="/CF.png" // Updated path
-  alt="AGP4 Commercial" 
-  className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_45px_50px_rgba(0,0,0,0.8)] transition-all duration-700 cursor-pointer" 
-  referrerPolicy="no-referrer"
-/>
+              <div className="flex flex-col sm:flex-row gap-4 mt-16">
+                <button className="bg-primary text-white px-10 py-5 text-[11px] font-black uppercase tracking-[0.3em] transition-all hover:bg-primary-dark shadow-lg flex-1 font-body">View Field Results</button>
+                <button className="bg-transparent border border-outline-variant text-on-surface px-10 py-5 text-[11px] font-black uppercase tracking-[0.3em] transition-all hover:border-primary flex-1 font-body">Explore Case Studies</button>
+              </div>
+            </div>
 
-{/* Home Gardening Section */}
-<motion.img 
-  // ... animation properties
-  src="/HG.png" // Updated path
-  alt="AGP4 Home" 
-  className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_40px_50px_rgba(0,0,0,0.2)] transition-all duration-700 cursor-pointer" 
-  referrerPolicy="no-referrer"
-/>                      rotate: [0, -0.5, 0, 0.5, 0]
+            <div className="space-y-12">
+              <div className="bg-white p-10 border border-primary/5 shadow-2xl space-y-12 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 leaf-texture opacity-10 rotate-45 pointer-events-none"></div>
+                <div className="relative z-10">
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-primary mb-10 font-body">Performance Insights</h4>
+                  
+                  <div className="mb-12">
+                    <div className="flex justify-between items-end mb-4">
+                      <h5 className="text-[10px] font-black uppercase tracking-widest text-on-surface font-body">Calcium Levels (Cherries)</h5>
+                      <div className="text-5xl font-headline font-black text-primary tracking-tighter transition-all hover:scale-110 cursor-default">+85.7%</div>
+                    </div>
+                    <div className="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "85.7%" }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="h-full bg-primary relative"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+                      </motion.div>
+                    </div>
+                    <div className="mt-3">
+                      <span className="text-[9px] font-black uppercase tracking-widest text-on-surface-variant opacity-60 font-body">AGP4 Formula vs Standard Application</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    <h5 className="text-[10px] font-black uppercase tracking-widest text-on-surface mb-6 font-body">Nutrient Absorption Efficiency</h5>
+                    <div className="grid grid-cols-2 gap-4">
+                      {[
+                        { val: "+64%", label: "Calcium" },
+                        { val: "+24%", label: "Nitrogen" }
+                      ].map((stat, i) => (
+                        <div key={i} className="bg-surface-container/50 p-6 border-l-4 border-primary hover:bg-white hover:shadow-lg transition-all">
+                          <div className="text-4xl font-headline font-black text-on-surface tracking-tighter mb-1">{stat.val}</div>
+                          <div className="text-[9px] font-black uppercase tracking-widest text-primary font-body">{stat.label}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-8 border-t border-outline-variant/30 flex flex-wrap justify-between items-end gap-6 relative z-10">
+                  <div className="space-y-2">
+                    <div className="text-4xl font-headline font-black text-on-surface tracking-tighter">+37.5%</div>
+                    <div className="text-[9px] font-black uppercase tracking-widest text-primary font-body">Total Yield Increase</div>
+                  </div>
+                  <div className="text-right space-y-2">
+                    <div className="flex items-center justify-end gap-3">
+                      <span className="text-lg font-bold text-on-surface-variant opacity-40 line-through font-body">18%</span>
+                      <ArrowRight size={16} className="text-primary" />
+                      <span className="text-3xl font-headline font-black text-on-surface">7%</span>
+                    </div>
+                    <div className="text-[9px] font-black uppercase tracking-widest text-primary font-body">Off-grade Reduction</div>
+                  </div>
+                </div>
+              </div>
+
+              <InteractiveMap />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-surface-container/30 border-y border-outline-variant/20">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
+            <div className="relative bg-primary-dark p-12 lg:p-20 flex flex-col items-center text-center overflow-hidden min-h-[850px]">
+              <div className="absolute inset-0 structural-grid opacity-[0.05]"></div>
+              <div className="absolute inset-0 leaf-texture opacity-5 rotate-90"></div>
+              <div className="relative z-10 flex flex-col items-center max-w-xl h-full justify-between">
+                <div>
+                  <div className="flex items-center gap-4 mb-8 justify-center">
+                    <div className="h-px w-8 bg-white/30"></div>
+                    <span className="text-[10px] uppercase tracking-[0.5em] text-white/50 font-black font-body">Commercial Farming</span>
+                    <div className="h-px w-8 bg-white/30"></div>
+                  </div>
+                  <h2 className="text-4xl md:text-6xl font-headline font-black text-white mb-8 tracking-tight leading-tight">
+                    One Solution.<br/>
+                    <span className="text-white/80 italic">Endless Applications.</span>
+                  </h2>
+                  <p className="text-lg text-white font-bold leading-tight mb-6 font-body">From large-scale farming to home gardens, AGP4 enhances everything you already do.</p>
+                  <p className="text-white/60 font-light leading-relaxed mb-12 font-body">Optimize large-scale operations with improved input efficiency and measurable yield gains.</p>
+                </div>
+                <div className="flex items-center justify-center py-8 relative">
+                  <motion.div 
+                    animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                    className="absolute w-[300px] h-[300px] bg-white rounded-full blur-[100px] pointer-events-none"
+                  />
+                  <motion.img 
+                    animate={{ 
+                      y: [0, -20, 0],
+                      rotate: [0, -0.5, 0, 0.5, 0]
                     }}
                     transition={{ 
                       duration: 6, 
@@ -788,7 +851,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Home */}
             <div className="relative bg-white p-12 lg:p-20 flex flex-col items-center text-center overflow-hidden min-h-[850px]">
               <div className="absolute inset-0 dotted-map opacity-[0.02]"></div>
               <div className="absolute inset-0 leaf-texture opacity-[0.02]"></div>
@@ -810,7 +872,6 @@ export default function App() {
                   <p className="text-on-surface-variant font-light leading-relaxed mb-12 font-body">Grow healthier plants with less effort using a safe and easy-to-use formula.</p>
                 </div>
                 <div className="flex items-center justify-center py-8 relative">
-                  {/* Enhanced Aura Pulse */}
                   <motion.div 
                     animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.5, 0.3] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -846,7 +907,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Intellectual Ecosystem */}
         <section id="resources" className="py-32 px-8 md:px-12 bg-background relative overflow-hidden">
           <div className="max-w-7xl mx-auto relative z-10">
             <div className="mb-16">
@@ -859,7 +919,6 @@ export default function App() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-              {/* Card 1 */}
               <div className="md:col-span-4 group bg-white border border-outline-variant/20 shadow-sm hover:border-primary/30 transition-all duration-500 flex flex-col p-8 cursor-pointer">
                 <div className="flex items-center justify-between mb-8">
                   <div className="w-12 h-12 bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-500">
@@ -871,7 +930,6 @@ export default function App() {
                 <p className="text-on-surface-variant text-sm font-light leading-relaxed font-body">Tailored insights for different plants and growing conditions.</p>
               </div>
 
-              {/* Card 2 */}
               <div className="md:col-span-4 group bg-white border border-outline-variant/20 shadow-sm hover:border-primary/30 transition-all duration-500 flex flex-col p-8 cursor-pointer">
                 <div className="w-12 h-12 bg-surface-container flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <FileText size={24} />
@@ -889,7 +947,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Card 3: AI Assistant Promo */}
               <div className="md:col-span-4 group bg-on-surface text-white shadow-2xl hover:shadow-primary/30 transition-all duration-700 flex flex-col p-8 relative overflow-hidden">
                 <div className="absolute inset-0 structural-grid opacity-[0.05]"></div>
                 <div className="relative z-10 flex flex-col h-full">
@@ -913,7 +970,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Card 4: Wide Resource Hub */}
               <div className="md:col-span-12 group bg-white border border-outline-variant/20 shadow-sm hover:border-primary/30 transition-all duration-500 p-8 md:p-12 flex flex-col md:flex-row md:items-center justify-between gap-8">
                 <div className="relative z-10 max-w-2xl">
                   <div className="flex items-center gap-3 mb-6">
@@ -931,7 +987,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* FAQ Section */}
             <div className="mt-24 pt-24 border-t border-outline-variant/20">
               <div className="flex flex-col lg:flex-row gap-16 lg:gap-32">
                 <div className="lg:w-1/3">
@@ -979,14 +1034,11 @@ export default function App() {
         </section>
       </main>
 
-      {/* Enhanced Footer */}
       <footer className="bg-[#0a1f0a] text-white pt-32 pb-12 px-8 md:px-12 relative overflow-hidden">
-        {/* Background Decorative Layer */}
         <div className="absolute inset-0 leaf-texture opacity-[0.03] pointer-events-none"></div>
         <div className="absolute inset-0 structural-grid opacity-[0.02] pointer-events-none"></div>
         <div className="absolute -bottom-24 -right-24 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none"></div>
         
-        {/* Giant Watermark Logo */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none select-none w-full flex flex-col items-center px-8">
            <svg 
             viewBox="0 0 100 80" 
@@ -1011,7 +1063,6 @@ export default function App() {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Top Newsletter / CTA Bar */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pb-24 border-b border-white/5 mb-24">
             <div className="lg:col-span-7">
               <h3 className="text-3xl md:text-5xl font-headline font-black tracking-tight mb-4 leading-tight">
@@ -1039,7 +1090,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Main Footer Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-16 mb-24">
           <div className="lg:col-span-4">
             <div className="group inline-block mb-10">
