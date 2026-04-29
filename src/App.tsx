@@ -37,15 +37,15 @@ import {
 import { GoogleGenAI } from "@google/genai";
 import { InteractiveMap } from './components/InteractiveMap';
 
-// Images mapping - Using absolute paths (points to /public folder)
+// Permanent GitHub Raw Links - These bypass folder structure issues
 const IMAGES = {
-  LOGO_WHITE: "/Logo.png",
-  LOGO_GREEN: "/Logo.png",
+  LOGO_WHITE: "https://raw.githubusercontent.com/HelloPipedream/AGP4/main/public/Logo.png",
+  LOGO_GREEN: "https://raw.githubusercontent.com/HelloPipedream/AGP4/main/public/Logo.png",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
-  COMMERCIAL_JUG: "/CF.png",
-  HOME_BOTTLE: "/HG.png",
+  COMMERCIAL_JUG: "https://raw.githubusercontent.com/HelloPipedream/AGP4/main/public/CF.png",
+  HOME_BOTTLE: "https://raw.githubusercontent.com/HelloPipedream/AGP4/main/public/HG.png",
   ORGANIC: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjAkUQVkQLrcxBoyQBTsrjzjdiOHg8oPu-vuqMExv1PumD9QdWG_odDblKb6Rq3cLnzsF6hKQ-9qFm7-gvf3RvcwxtLeUCfvzcbx32jf9bstyczIoZ8SF97P44Erdr9JRP7xI_fklj7Qft94w_4AgX0Jn5dgBAUGu2hfq-tkTrEEjrEz-4w3T-gJ6qmQIKCV7RVLjxU6yJG7JcyBK4BHqLXOENJW3_KHqTu7H6DZMC_CFbrYGMt-EI4yzFFbU0ftxrHfxdTk5-G1w"
 };
 
@@ -54,7 +54,7 @@ const Logo = ({ light = false, className = "" }: { light?: boolean, className?: 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="/Logo.png" 
+        src={IMAGES.LOGO_WHITE} 
         alt="AGP4 Logo" 
         className="h-12 w-auto object-contain" 
       />
@@ -492,12 +492,6 @@ export default function App() {
         </section>
 
         <section id="process" className="bg-white py-32 px-8 md:px-12 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-            <img src={IMAGES.CHERRIES} alt="" className="absolute top-[10%] left-[5%] w-64 h-64 opacity-[0.04] blur-xl transform -rotate-12" referrerPolicy="no-referrer" />
-            <img src={IMAGES.STRAWBERRIES} alt="" className="absolute bottom-[15%] right-[10%] w-80 h-80 opacity-[0.03] blur-2xl transform rotate-45" referrerPolicy="no-referrer" />
-            <img src={IMAGES.ORGANIC} alt="" className="absolute bottom-[5%] left-[30%] w-56 h-56 opacity-[0.04] blur-md" referrerPolicy="no-referrer" />
-          </div>
-
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
               <motion.div 
@@ -554,47 +548,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Visual Demonstration Section */}
-        <section className="bg-surface-container/50 py-32 px-8 md:px-12 relative">
-          <div className="max-w-7xl mx-auto text-center relative z-10">
-            <h2 className="text-4xl md:text-6xl font-headline tracking-tight text-on-surface mb-8">See the Absorption Revolution in Action</h2>
-            <div className="relative max-w-5xl mx-auto">
-               <div className="aspect-video bg-black overflow-hidden shadow-2xl relative border-8 border-white">
-                <img 
-                  alt="Cinematic macro shot" 
-                  className="w-full h-full object-cover opacity-80" 
-                  src={IMAGES.HERO} 
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="impact" className="py-32 px-8 md:px-12 bg-white">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
-            <div>
-              <h2 className="text-5xl md:text-7xl font-headline tracking-tight text-on-surface leading-tight mb-6">Proven Where It Matters Most</h2>
-              <div className="space-y-10">
-                {[
-                  { icon: <Globe />, title: "Real-World Scale", text: "Used across thousands of acres in diverse climates." },
-                  { icon: <BarChart3 />, title: "Measurable Results", text: "Significant yield increases validated by independent data." },
-                ].map((item, i) => (
-                  <div key={i} className="flex gap-6 group">
-                    <div className="w-14 h-14 shrink-0 bg-primary/10 flex items-center justify-center text-primary">
-                      {item.icon}
-                    </div>
-                    <div>
-                      <h3 className="text-lg uppercase tracking-widest text-on-surface mb-2 font-bold">{item.title}</h3>
-                      <p className="text-sm text-on-surface-variant leading-relaxed">{item.text}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Dual Solutions Section - Images fixed with correct syntax */}
         <section className="bg-surface-container/30 border-y border-outline-variant/20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
             {/* Commercial Solutions */}
@@ -608,7 +561,7 @@ export default function App() {
                   <motion.img 
                     animate={{ y: [0, -20, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    src="/CF.png" 
+                    src={IMAGES.COMMERCIAL_JUG} 
                     alt="AGP4 Commercial" 
                     className="max-h-[380px] w-auto drop-shadow-2xl" 
                   />
@@ -630,7 +583,7 @@ export default function App() {
                   <motion.img 
                     animate={{ y: [0, -15, 0] }}
                     transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-                    src="/HG.png"
+                    src={IMAGES.HOME_BOTTLE}
                     alt="AGP4 Home" 
                     className="max-h-[380px] w-auto drop-shadow-2xl" 
                   />
