@@ -39,13 +39,13 @@ import { InteractiveMap } from './components/InteractiveMap';
 
 // Images extracted from user provided HTML
 const IMAGES = {
-  LOGO_WHITE: "/Logo.png",
-  LOGO_GREEN: "/Logo.png",
+  LOGO_WHITE: "Logo.png",
+  LOGO_GREEN: "Logo.png",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
-  COMMERCIAL_JUG: "https://lh3.googleusercontent.com/aida/ADBb0uhpzws0oTEjNLIW6Gz1WIljZz3aVMPcqOOUXIZ5lvwaDhi5bkPRbgOO7Z1aEdQS_HIEQ9T-VSpwaz92rNllufKUJHxHIEK0UafiGO9zkGFEvc8rDhRIjj8SlDk90i8chptkc6riVQFxKTCUewHh08yPCO6bRKqHas7GLpBp0iBXz6zdRZQlLbG8pMM6JBwfrLOFsapYxr1Bv4UkBY6F5RcORdqHye1FV7TdgvDq80zJq9toFsyXlE-DoQkVg2cf3KTAPwrG762R",
-  HOME_BOTTLE: "https://lh3.googleusercontent.com/aida/ADBb0ug6Fv7uydDU050Y9YLD5sx_c-P36bhBwjb9Ib5s7huYlJJnLFz9fMcib3iBaINdm2BYmkV0WDiM_pUG9Kzw8hQXs3BuOfWKgNZDfFseHzJRf4DKStvDVFMyAph8vf6LH0c-wd9zcr1v8yD0stJvYE3BhJeH_Ym0DcuXwCOIr8BVi9eGn3wcgoSlVkzbq6G-e0nGAdccGiO4GmJlM4ukqqL6dfZr2TSVdsDP2dsq4htvmv9Xw4VaDxMJXKZSaL60eHLdGS2e3eah",
+  COMMERCIAL_JUG: "/CF.png", // Updated
+  HOME_BOTTLE: "/HG.png",    // Updated
   ORGANIC: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjAkUQVkQLrcxBoyQBTsrjzjdiOHg8oPu-vuqMExv1PumD9QdWG_odDblKb6Rq3cLnzsF6hKQ-9qFm7-gvf3RvcwxtLeUCfvzcbx32jf9bstyczIoZ8SF97P44Erdr9JRP7xI_fklj7Qft94w_4AgX0Jn5dgBAUGu2hfq-tkTrEEjrEz-4w3T-gJ6qmQIKCV7RVLjxU6yJG7JcyBK4BHqLXOENJW3_KHqTu7H6DZMC_CFbrYGMt-EI4yzFFbU0ftxrHfxdTk5-G1w"
 };
 
@@ -747,108 +747,23 @@ export default function App() {
                 ))}
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 mt-16">
-                <button className="bg-primary text-white px-10 py-5 text-[11px] font-black uppercase tracking-[0.3em] transition-all hover:bg-primary-dark shadow-lg flex-1 font-body">View Field Results</button>
-                <button className="bg-transparent border border-outline-variant text-on-surface px-10 py-5 text-[11px] font-black uppercase tracking-[0.3em] transition-all hover:border-primary flex-1 font-body">Explore Case Studies</button>
-              </div>
-            </div>
+              {/* Commercial Farming Section */}
+<motion.img 
+  // ... animation properties
+  src="/CF.png" // Updated path
+  alt="AGP4 Commercial" 
+  className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_45px_50px_rgba(0,0,0,0.8)] transition-all duration-700 cursor-pointer" 
+  referrerPolicy="no-referrer"
+/>
 
-            <div className="space-y-12">
-              <div className="bg-white p-10 border border-primary/5 shadow-2xl space-y-12 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 leaf-texture opacity-10 rotate-45 pointer-events-none"></div>
-                <div className="relative z-10">
-                  <h4 className="text-[11px] font-black uppercase tracking-[0.4em] text-primary mb-10 font-body">Performance Insights</h4>
-                  
-                  <div className="mb-12">
-                    <div className="flex justify-between items-end mb-4">
-                      <h5 className="text-[10px] font-black uppercase tracking-widest text-on-surface font-body">Calcium Levels (Cherries)</h5>
-                      <div className="text-5xl font-headline font-black text-primary tracking-tighter transition-all hover:scale-110 cursor-default">+85.7%</div>
-                    </div>
-                    <div className="h-3 w-full bg-surface-container-high rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "85.7%" }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="h-full bg-primary relative"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-                      </motion.div>
-                    </div>
-                    <div className="mt-3">
-                      <span className="text-[9px] font-black uppercase tracking-widest text-on-surface-variant opacity-60 font-body">AGP4 Formula vs Standard Application</span>
-                    </div>
-                  </div>
-
-                  <div className="space-y-6">
-                    <h5 className="text-[10px] font-black uppercase tracking-widest text-on-surface mb-6 font-body">Nutrient Absorption Efficiency</h5>
-                    <div className="grid grid-cols-2 gap-4">
-                      {[
-                        { val: "+64%", label: "Calcium" },
-                        { val: "+24%", label: "Nitrogen" }
-                      ].map((stat, i) => (
-                        <div key={i} className="bg-surface-container/50 p-6 border-l-4 border-primary hover:bg-white hover:shadow-lg transition-all">
-                          <div className="text-4xl font-headline font-black text-on-surface tracking-tighter mb-1">{stat.val}</div>
-                          <div className="text-[9px] font-black uppercase tracking-widest text-primary font-body">{stat.label}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="pt-8 border-t border-outline-variant/30 flex flex-wrap justify-between items-end gap-6 relative z-10">
-                  <div className="space-y-2">
-                    <div className="text-4xl font-headline font-black text-on-surface tracking-tighter">+37.5%</div>
-                    <div className="text-[9px] font-black uppercase tracking-widest text-primary font-body">Total Yield Increase</div>
-                  </div>
-                  <div className="text-right space-y-2">
-                    <div className="flex items-center justify-end gap-3">
-                      <span className="text-lg font-bold text-on-surface-variant opacity-40 line-through font-body">18%</span>
-                      <ArrowRight size={16} className="text-primary" />
-                      <span className="text-3xl font-headline font-black text-on-surface">7%</span>
-                    </div>
-                    <div className="text-[9px] font-black uppercase tracking-widest text-primary font-body">Off-grade Reduction</div>
-                  </div>
-                </div>
-              </div>
-
-              <InteractiveMap />
-            </div>
-          </div>
-        </section>
-
-        {/* Dual Solutions Section */}
-        <section className="bg-surface-container/30 border-y border-outline-variant/20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
-            {/* Commercial */}
-            <div className="relative bg-primary-dark p-12 lg:p-20 flex flex-col items-center text-center overflow-hidden min-h-[850px]">
-              <div className="absolute inset-0 structural-grid opacity-[0.05]"></div>
-              <div className="absolute inset-0 leaf-texture opacity-5 rotate-90"></div>
-              <div className="relative z-10 flex flex-col items-center max-w-xl h-full justify-between">
-                <div>
-                  <div className="flex items-center gap-4 mb-8 justify-center">
-                    <div className="h-px w-8 bg-white/30"></div>
-                    <span className="text-[10px] uppercase tracking-[0.5em] text-white/50 font-black font-body">Commercial Farming</span>
-                    <div className="h-px w-8 bg-white/30"></div>
-                  </div>
-                  <h2 className="text-4xl md:text-6xl font-headline font-black text-white mb-8 tracking-tight leading-tight">
-                    One Solution.<br/>
-                    <span className="text-white/80 italic">Endless Applications.</span>
-                  </h2>
-                  <p className="text-lg text-white font-bold leading-tight mb-6 font-body">From large-scale farming to home gardens, AGP4 enhances everything you already do.</p>
-                  <p className="text-white/60 font-light leading-relaxed mb-12 font-body">Optimize large-scale operations with improved input efficiency and measurable yield gains.</p>
-                </div>
-                <div className="flex items-center justify-center py-8 relative">
-                  {/* Enhanced Aura Pulse */}
-                  <motion.div 
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute w-[300px] h-[300px] bg-white rounded-full blur-[100px] pointer-events-none"
-                  />
-                  <motion.img 
-                    animate={{ 
-                      y: [0, -20, 0],
-                      rotate: [0, -0.5, 0, 0.5, 0]
+{/* Home Gardening Section */}
+<motion.img 
+  // ... animation properties
+  src="/HG.png" // Updated path
+  alt="AGP4 Home" 
+  className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_40px_50px_rgba(0,0,0,0.2)] transition-all duration-700 cursor-pointer" 
+  referrerPolicy="no-referrer"
+/>                      rotate: [0, -0.5, 0, 0.5, 0]
                     }}
                     transition={{ 
                       duration: 6, 
