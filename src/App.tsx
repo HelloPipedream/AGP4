@@ -39,8 +39,8 @@ import { InteractiveMap } from './components/InteractiveMap';
 
 // Images extracted from user provided HTML
 const IMAGES = {
-  LOGO_WHITE: "https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/Logo.png?token=GHSAT0AAAAAAD3XBL3KNT6ABQ7STTEDEKGO2PSJEBA",
-  LOGO_GREEN: "https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/Logo.png?token=GHSAT0AAAAAAD3XBL3KNT6ABQ7STTEDEKGO2PSJEBA",
+  LOGO_WHITE: "Logo.png",
+  LOGO_GREEN: "Logo.png",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
@@ -54,7 +54,7 @@ const Logo = ({ light = false, className = "" }: { light?: boolean, className?: 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/Logo.png?token=GHSAT0AAAAAAD3XBL3KNT6ABQ7STTEDEKGO2PSJEBA" 
+        src="Logo.png" 
         alt="AGP4 Logo" 
         className="h-12 w-auto object-contain" 
       />
@@ -861,7 +861,7 @@ export default function App() {
                       filter: "drop-shadow(0 0 50px rgba(255,255,255,0.4))",
                       y: -10
                     }}
-                    src="https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/CF.png?token=GHSAT0AAAAAAD3XBL3LD5PLOAAXA7GKEIDK2PSJN5Q" 
+                    src="CF.png", 
                     alt="AGP4 Commercial" 
                     className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_45px_50px_rgba(0,0,0,0.8)] transition-all duration-700 cursor-pointer" 
                     referrerPolicy="no-referrer"
@@ -917,7 +917,7 @@ export default function App() {
                       filter: "drop-shadow(0 0 40px rgba(43,99,52,0.3))",
                       y: -10
                     }}
-                    src="https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/HG.png?token=GHSAT0AAAAAAD3XBL3LO7ZW5JPBATIPTRO22PSJOEQ" 
+                    src="HG.png", 
                     alt="AGP4 Home" 
                     className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_40px_50px_rgba(0,0,0,0.2)] transition-all duration-700 cursor-pointer" 
                     referrerPolicy="no-referrer"
