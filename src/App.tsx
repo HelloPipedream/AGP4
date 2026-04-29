@@ -861,7 +861,7 @@ export default function App() {
                       filter: "drop-shadow(0 0 50px rgba(255,255,255,0.4))",
                       y: -10
                     }}
-                    src={IMAGES.COMMERCIAL_JUG} 
+                    src="https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/CF.png?token=GHSAT0AAAAAAD3XBL3LD5PLOAAXA7GKEIDK2PSJN5Q" 
                     alt="AGP4 Commercial" 
                     className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_45px_50px_rgba(0,0,0,0.8)] transition-all duration-700 cursor-pointer" 
                     referrerPolicy="no-referrer"
@@ -917,7 +917,7 @@ export default function App() {
                       filter: "drop-shadow(0 0 40px rgba(43,99,52,0.3))",
                       y: -10
                     }}
-                    src={IMAGES.HOME_BOTTLE} 
+                    src="https://raw.githubusercontent.com/HelloPipedream/AGP4/refs/heads/main/HG.png?token=GHSAT0AAAAAAD3XBL3LO7ZW5JPBATIPTRO22PSJOEQ" 
                     alt="AGP4 Home" 
                     className="relative z-10 max-h-[380px] w-auto drop-shadow-[0_40px_50px_rgba(0,0,0,0.2)] transition-all duration-700 cursor-pointer" 
                     referrerPolicy="no-referrer"
