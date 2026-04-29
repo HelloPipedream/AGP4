@@ -37,15 +37,15 @@ import {
 import { GoogleGenAI } from "@google/genai";
 import { InteractiveMap } from './components/InteractiveMap';
 
-// Images mapping - Using ./ for root-level files
+// Images mapping - Using absolute paths (points to /public folder)
 const IMAGES = {
-  LOGO_WHITE: "./Logo.png",
-  LOGO_GREEN: "./Logo.png",
+  LOGO_WHITE: "/Logo.png",
+  LOGO_GREEN: "/Logo.png",
   HERO: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=2070",
   CHERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuCHmZf_uLid_z3kU7aF0iWlXN66L97v6lR0i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
   STRAWBERRIES: "https://lh3.googleusercontent.com/aida-public/AB6AXuDV6mEjPzu1gITXx-PrMJxJnx3U4cBeEolVZHfpXBiIv5Cfzn_sIhkC7IyWSE7UmLr-lF1i0DMC-sXokxJ7AgReGwjcsTdUi0LvSRXqRUXnIgC6bPtSjz0thDDm1tPNdWyBYb41iXVaUUz_SZRiLa1REflLYnHs817oRmBNseJQwpscVlJrZh8ns8M6s012YUVFrv0JQP81aWmRhm1wvSjfSollxuIQPhjzQlkTR0m8_7gU2ScnbhSsyWaXjhLNJbLfLG6Gt0Oyuxg",
-  COMMERCIAL_JUG: "./CF.png",
-  HOME_BOTTLE: "./HG.png",
+  COMMERCIAL_JUG: "/CF.png",
+  HOME_BOTTLE: "/HG.png",
   ORGANIC: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjAkUQVkQLrcxBoyQBTsrjzjdiOHg8oPu-vuqMExv1PumD9QdWG_odDblKb6Rq3cLnzsF6hKQ-9qFm7-gvf3RvcwxtLeUCfvzcbx32jf9bstyczIoZ8SF97P44Erdr9JRP7xI_fklj7Qft94w_4AgX0Jn5dgBAUGu2hfq-tkTrEEjrEz-4w3T-gJ6qmQIKCV7RVLjxU6yJG7JcyBK4BHqLXOENJW3_KHqTu7H6DZMC_CFbrYGMt-EI4yzFFbU0ftxrHfxdTk5-G1w"
 };
 
@@ -54,7 +54,7 @@ const Logo = ({ light = false, className = "" }: { light?: boolean, className?: 
   return (
     <div className={`flex items-center ${className}`}>
       <img 
-        src="./Logo.png" 
+        src="/Logo.png" 
         alt="AGP4 Logo" 
         className="h-12 w-auto object-contain" 
       />
@@ -554,6 +554,7 @@ export default function App() {
           </div>
         </section>
 
+        {/* Visual Demonstration Section */}
         <section className="bg-surface-container/50 py-32 px-8 md:px-12 relative">
           <div className="max-w-7xl mx-auto text-center relative z-10">
             <h2 className="text-4xl md:text-6xl font-headline tracking-tight text-on-surface mb-8">See the Absorption Revolution in Action</h2>
@@ -593,41 +594,48 @@ export default function App() {
           </div>
         </section>
 
+        {/* Dual Solutions Section - Images fixed with correct syntax */}
         <section className="bg-surface-container/30 border-y border-outline-variant/20">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-            {/* Commercial Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 overflow-hidden">
+            {/* Commercial Solutions */}
             <div className="relative bg-primary-dark p-12 lg:p-20 flex flex-col items-center text-center min-h-[800px]">
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-6xl font-headline font-black text-white mb-8">Commercial Farming</h2>
+              <div className="relative z-10 flex flex-col items-center h-full justify-between">
+                <div>
+                  <h2 className="text-4xl md:text-6xl font-headline font-black text-white mb-8">Commercial Farming</h2>
+                  <p className="text-white/60 font-light leading-relaxed mb-12 font-body">Optimize large-scale operations with improved input efficiency.</p>
+                </div>
                 <div className="flex items-center justify-center py-8">
                   <motion.img 
                     animate={{ y: [0, -20, 0] }}
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    src="./CF.png" 
+                    src="/CF.png" 
                     alt="AGP4 Commercial" 
                     className="max-h-[380px] w-auto drop-shadow-2xl" 
                   />
                 </div>
-                <button className="bg-white text-primary-dark px-12 py-5 font-black uppercase tracking-widest">
+                <button className="bg-white text-primary-dark px-12 py-5 font-black uppercase tracking-widest font-body">
                   For Commercial Growers
                 </button>
               </div>
             </div>
 
-            {/* Home Section */}
+            {/* Home Solutions */}
             <div className="relative bg-white p-12 lg:p-20 flex flex-col items-center text-center min-h-[800px]">
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-6xl font-headline font-black text-on-surface mb-8">Home Gardening</h2>
+              <div className="relative z-10 flex flex-col items-center h-full justify-between">
+                <div>
+                  <h2 className="text-4xl md:text-6xl font-headline font-black text-on-surface mb-8">Home Gardening</h2>
+                  <p className="text-on-surface-variant font-light leading-relaxed mb-12 font-body">Safe, simple plant care for modern home gardens.</p>
+                </div>
                 <div className="flex items-center justify-center py-8">
                   <motion.img 
                     animate={{ y: [0, -15, 0] }}
                     transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-                    src="./HG.png"
+                    src="/HG.png"
                     alt="AGP4 Home" 
                     className="max-h-[380px] w-auto drop-shadow-2xl" 
                   />
                 </div>
-                <button className="bg-primary text-white px-12 py-5 font-black uppercase tracking-widest">
+                <button className="bg-primary text-white px-12 py-5 font-black uppercase tracking-widest font-body">
                   For Home Gardeners
                 </button>
               </div>
@@ -639,7 +647,7 @@ export default function App() {
       <footer className="bg-[#0a1f0a] text-white pt-32 pb-12 px-8 md:px-12">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-12">
           <Logo light />
-          <p className="text-white/20 text-[10px] uppercase font-black">
+          <p className="text-white/20 text-[10px] uppercase font-black font-body">
             © 2026 AGP4 Architectural Systems. All rights reserved.
           </p>
         </div>
